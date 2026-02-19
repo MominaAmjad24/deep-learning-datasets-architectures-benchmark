@@ -11,7 +11,7 @@ from models.cnn_image import CIFAR100CNN
 # -----------------------
 # Config (CIFAR-100)
 # -----------------------
-ARCH = "cnn"          # "mlp" or "cnn"
+ARCH = "mlp"          # "mlp" or "cnn"
 BATCH_SIZE = 128
 LR = 1e-3
 EPOCHS = 30
@@ -42,7 +42,9 @@ def evaluate_accuracy(model, loader, device, arch):
 
 
 def main():
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    device = torch.device(
+    "cuda" if torch.cuda.is_available()
+    else ("mps" if torch.backends.mps.is_available() else "cpu"))
     print(f"Using device: {device}")
 
     train_loader, val_loader, test_loader = get_cifar100_loaders(batch_size=BATCH_SIZE)
