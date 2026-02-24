@@ -1,0 +1,46 @@
+# configs/config.yaml
+
+experiment:
+  dataset: cifar100         # adult | cifar100 | pcam
+  architecture: cnn         # mlp | cnn | vit (vit only for cifar100)
+  device: auto             # auto | cpu | mps | cuda
+  seed: 42
+  output_dir: runs
+  save_best: true
+
+training:
+  batch_size: 128
+  lr: 0.001
+  epochs: 30
+  early_stopping_patience: 5
+  dropout: 0.3
+  num_workers: 0
+
+adult:
+  # tabular
+  num_classes: 2
+
+cifar100:
+  # images
+  num_classes: 100
+  val_ratio: 0.10
+  # ViT hyperparams (only used if architecture: vit)
+  vit:
+    img_size: 32
+    patch_size: 4
+    embed_dim: 128
+    depth: 4
+    num_heads: 4
+    mlp_ratio: 4.0
+    dropout: 0.1
+    lr: 0.0003
+    epochs: 20
+
+pcam:
+  # binary image classification
+  num_classes: 2
+  subset:
+    max_train: 50000
+    max_val: 10000
+    max_test: 10000
+
