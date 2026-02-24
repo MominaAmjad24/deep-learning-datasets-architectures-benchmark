@@ -13,4 +13,5 @@ data/
 *.pt
 *.pth
 
-
+# Runs
+runs/
