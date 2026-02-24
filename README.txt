@@ -220,18 +220,20 @@ note: python analysis/visualize_weights.py was running into an error as it was s
 #  Repository Structure
 
 ```
+analysis/
 configs/
 datasets/
 models/
-analysis/
 utils/
+.gitignore
+README.txt
+requirements.txt
+run_experiment.py
 train.py
 train_cifar100.py
 train_vit_cifar100.py
 train_pcam.py
-run_experiment.py
-requirements.txt
-README.txt
+utils.py
 ```
 
 ---
@@ -241,4 +243,5 @@ README.txt
 This study demonstrates that no single neural architecture is universally optimal. Performance depends strongly on the relationship between model inductive bias and data structure. MLPs remain competitive for tabular problems, while CNNs are essential for spatial data such as natural and medical images.
 
 ---
+
 
