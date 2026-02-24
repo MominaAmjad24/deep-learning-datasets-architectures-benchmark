@@ -234,7 +234,7 @@ train.py
 train_cifar100.py
 train_vit_cifar100.py
 train_pcam.py
-utils.py
+
 ```
 
 ---
@@ -244,6 +244,7 @@ utils.py
 This study demonstrates that no single neural architecture is universally optimal. Performance depends strongly on the relationship between model inductive bias and data structure. MLPs remain competitive for tabular problems, while CNNs are essential for spatial data such as natural and medical images.
 
 ---
+
 
 
 =======
